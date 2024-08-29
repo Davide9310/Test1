@@ -3,49 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
+    <title>Interactive Web Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
+            background-color: #f0f0f0;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             text-align: center;
         }
         header {
             background-color: #4CAF50;
             color: white;
             padding: 20px;
-            text-align: center;
+            margin-bottom: 20px;
         }
         section {
-            padding: 20px;
+            margin: 20px 0;
         }
-        footer {
-            background-color: #4CAF50;
-            color: white;
+        input, button {
             padding: 10px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #colorPicker {
+            padding: 0;
+            border: none;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Welcome to My Simple Website</h1>
+    <h1>Welcome to My Interactive Page</h1>
 </header>
 
 <section>
-    <h2>About This Site</h2>
-    <p>This is a simple HTML website hosted on GitHub Pages.</p>
+    <h2>Personalized Greeting</h2>
+    <p>Enter your name and click the button to see a greeting:</p>
+    <input type="text" id="nameInput" placeholder="Your name">
+    <button onclick="displayGreeting()">Greet Me!</button>
+    <p id="greetingMessage"></p>
+</section>
+
+<section>
+    <h2>Change Background Color</h2>
+    <p>Select a color to change the background:</p>
+    <input type="color" id="colorPicker" onchange="changeBackgroundColor()">
 </section>
 
 <footer>
-    <p>&copy; 2024 My Simple Website</p>
+    <p>&copy; 2024 Interactive Web Page</p>
 </footer>
+
+<script>
+    function displayGreeting() {
+        const name = document.getElementById('nameInput').value;
+        const greetingMessage = name ? `Hello, ${name}! Welcome to the site!` : 'Please enter your name!';
+        document.getElementById('greetingMessage').textContent = greetingMessage;
+    }
+
+    function changeBackgroundColor() {
+        const color = document.getElementById('colorPicker').value;
+        document.body.style.backgroundColor = color;
+    }
+</script>
 
 </body>
 </html>
