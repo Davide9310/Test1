@@ -6,9 +6,7 @@ import Replicate from "https://cdn.skypack.dev/replicate";
 
 console.log("Starting the script");
 
-const replicate = new Replicate({
-  auth: process.env.REPLICATE_API_TOKEN,
-});
+const replicate = new Replicate();
 
 console.log("Replicate instance created:", replicate);
 
