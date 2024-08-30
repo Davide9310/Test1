@@ -1,3 +1,5 @@
+console.log("JavaScript file loaded successfully");
+
 // import Replicate from "replicate";
 import Replicate from "https://cdn.skypack.dev/replicate";
 
