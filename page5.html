@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 5 - Gamification and Advanced Features</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background: #8e44ad;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            position: relative;
+        }
+
+        section:first-of-type {
+            margin-top: 180px; /* Add margin-top to create space below the header for the first section only */
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Progress Bars */
+        .progress-bar-container {
+            margin: 40px auto;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 25px;
+            margin: 10px 0;
+        }
+
+        .progress-bar-fill {
+            height: 30px;
+            background-color: #3498db;
+            border-radius: 25px;
+            text-align: right;
+            padding-right: 10px;
+            line-height: 30px;
+            color: white;
+            width: 0;
+            animation: fillProgressBar 2s forwards;
+        }
+
+        @keyframes fillProgressBar1 {
+            from { width: 0; }
+            to { width: 70%; }
+        }
+
+        @keyframes fillProgressBar2 {
+            from { width: 0; }
+            to { width: 50%; }
+        }
+
+
+        /* Quiz Section */
+        .quiz-container {
+            margin: 40px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .quiz-container button {
+            padding: 10px 20px;
+            background-color: #8e44ad;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        .quiz-container button:hover {
+            background-color: #732d91;
+        }
+
+        /* User Authentication Section */
+        .auth-container {
+            margin: 40px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .auth-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+        .auth-container button {
+            padding: 10px 20px;
+            background-color: #8e44ad;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .auth-container button:hover {
+            background-color: #732d91;
+        }
+
+        /* Custom Cursor */
+        body {
+            cursor: url('custom-cursor.png'), auto;
+        }
+
+        /* Text-to-Speech Section */
+        .tts-container {
+            margin: 40px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .tts-container button {
+            padding: 10px 20px;
+            background-color: #8e44ad;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        .tts-container button:hover {
+            background-color: #732d91;
+        }
+
+        footer {
+            background-color: #8e44ad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header style="background: linear-gradient(270deg, #732d91, #8e44ad); color: white; text-align: center; animation: gradientBG 15s ease infinite;">
+    <h1>Gamification and Advanced Features</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="page1.html">Page 1</a>
+        <a href="page2.html">Page 2</a>
+        <a href="page3.html">Page 3</a>
+        <a href="page4.html">Page 4</a>
+        <a href="page5.html">Page 5</a>
+        <a href="AI.html">AI Projects</a>
+    </nav>
+</header>
+
+<section class="progress-bar-container">
+    <h2>Progress Bars</h2>
+
+    <div class="progress-bar">
+        <div class="progress-bar-fill" style="animation: fillProgressBar1 2s ease-in-out forwards;">
+            70%
+        </div>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-bar-fill" style="animation: fillProgressBar2 2s ease-in-out forwards;">
+            50%
+        </div>
+    </div>
+</section>
+
+
+<section class="quiz-container">
+    <h2>Interactive Quiz</h2>
+    <p>What is the capital of France?</p>
+    <button onclick="checkAnswer('Paris')">Paris</button>
+    <button onclick="checkAnswer('London')">London</button>
+    <button onclick="checkAnswer('Berlin')">Berlin</button>
+    <button onclick="checkAnswer('Madrid')">Madrid</button>
+    <p id="quiz-result"></p>
+</section>
+
+<section class="auth-container">
+    <h2>User Authentication</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+</section>
+
+<section class="tts-container">
+    <h2>Text-to-Speech</h2>
+    <p>This website uses the latest web technologies to enhance user experience.</p>
+    <button onclick="speakText()">Speak Text</button>
+</section>
+
+<footer>
+    <p>&copy; 2024 My Gamified Website</p>
+</footer>
+
+<script>
+    // Interactive Quiz Functionality
+    function checkAnswer(answer) {
+        const result = document.getElementById('quiz-result');
+        if (answer === 'Paris') {
+            result.textContent = 'Correct!';
+            result.style.color = 'green';
+        } else {
+            result.textContent = 'Incorrect, try again!';
+            result.style.color = 'red';
+        }
+    }
+
+    // Text-to-Speech Functionality
+    function speakText() {
+        const msg = new SpeechSynthesisUtterance();
+        msg.text = "This website uses the latest web technologies to enhance user experience.";
+        window.speechSynthesis.speak(msg);
+    }
+</script>
+
+</body>
+</html>

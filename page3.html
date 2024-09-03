@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3 - Interactive and Visual Features</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styling */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            position: relative;
+        }
+
+        section:first-of-type {
+            margin-top: 180px; /* Add margin-top to create space below the header for the first section only */
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Image Carousel */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .carousel .prev {
+            left: 10px;
+        }
+
+        .carousel .next {
+            right: 10px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Parallax Section */
+        .parallax {
+            background: url('parallax2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 40px 0;
+        }
+
+        .parallax h2 {
+            font-size: 3rem;
+        }
+
+        .parallaxright {
+            background: url('image2.jpg') no-repeat center right fixed;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-left: auto;
+            margin-right: 0px;
+        }
+
+        .parallaxright h2 {
+            font-size: 3rem;
+        }
+
+        /* Scroll Animations */
+        .animated-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .animated-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header style="background: linear-gradient(270deg, #4f7e5f, #4eb47b); color: white; text-align: center; animation: gradientBG 15s ease infinite;">
+    <h1>Interactive and Visual Features</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="page1.html">Page 1</a>
+        <a href="page2.html">Page 2</a>
+        <a href="page3.html">Page 3</a>
+        <a href="page4.html">Page 4</a>
+        <a href="page5.html">Page 5</a>
+        <a href="AI.html">AI Projects</a>
+    </nav>
+</header>
+
+
+<section class="parallax">
+    <h2>Parallax Scrolling Section</h2>
+</section>
+
+<section class="parallaxright">
+    <h2>Parallax Scrolling Section 2</h2>
+</section>
+
+<section style="margin-top: 80px">
+    <h2>Image Carousel</h2>
+    <div class="carousel">
+        <img src="image1.jpg" class="active" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+</section>
+
+<section class="animated-section">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<section class="animated-section">
+    <h2>Learn More</h2>
+    <p>Explore more content with smooth scroll animations as you move through different sections of the page.</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 My Interactive Website</p>
+</footer>
+
+<script>
+    // Image Carousel Script
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel img');
+    const prevButton = document.querySelector('.carousel .prev');
+    const nextButton = document.querySelector('.carousel .next');
+
+    function showSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
+    nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+
+    // Scroll Animation Script
+    const animatedSections = document.querySelectorAll('.animated-section');
+
+    function handleScroll() {
+        animatedSections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < window.innerHeight - 100) {
+                section.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('DOMContentLoaded', handleScroll);
+</script>
+
+</body>
+</html>

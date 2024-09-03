@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 4 - Advanced Features</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            position: relative;
+        }
+
+        section:first-of-type {
+            margin-top: 180px; /* Add margin-top to create space below the header for the first section only */
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Typography with Animated Text */
+        .animated-text {
+            font-size: 2rem;
+            color: #e74c3c;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #e74c3c;
+            animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #e74c3c; }
+        }
+
+        /* Custom Fonts */
+        h2.custom-font {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 3rem;
+            color: #2980b9;
+        }
+
+        /* Social Media Share Buttons */
+        .social-share {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .social-share a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 2rem;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            background-color: #3498db;
+            transition: background 0.3s ease;
+        }
+
+        .social-share a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Interactive Map */
+        .map-container {
+            margin: 40px auto;
+        }
+
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+
+        /* Dropdown Navigation */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2c3e50;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #2980b9;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+
+<header style="background: linear-gradient(270deg, #2980b9, #2c3e50); color: white; text-align: center; animation: gradientBG 15s ease infinite;">
+    <h1>Advanced Features Page</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="page1.html">Page 1</a>
+        <a href="page2.html">Page 2</a>
+        <a href="page3.html">Page 3</a>
+        <a href="page4.html">Page 4</a>
+        <a href="page5.html">Page 5</a>
+        <a href="AI.html">AI Projects</a>
+    </nav>
+</header>
+
+<section>
+    <h2 class="custom-font">Elegant Typography with Custom Fonts</h2>
+    <p class="animated-text">Experience the art of typography...</p>
+</section>
+
+
+<section class="map-container">
+    <h2>Find Us Here</h2>
+    <div id="map"></div>
+</section>
+
+<footer>
+    <p>&copy; 2024 My Advanced Website</p>
+</footer>
+
+<script>
+    // Google Maps Initialization
+    function initMap() {
+        var location = { lat: -34.397, lng: 150.644 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: location
+        });
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+    }
+</script>
+
+</body>
+</html>
